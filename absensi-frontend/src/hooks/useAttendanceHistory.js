@@ -7,7 +7,7 @@ const useAttendanceHistory = (dashboardUser, page, attendance, authFetch, record
     const fetchAttendanceHistory = async () => {
       if (!dashboardUser) return;
       const response = await authFetch(
-        `http://${import.meta.env.VITE_API_BASE_URL}/api/attendance/history/${dashboardUser._id}?page=${page}&limit=${recordsPerPage}`
+        `https://${import.meta.env.VITE_API_BASE_URL}/api/attendance/history/${dashboardUser._id}?page=${page}&limit=${recordsPerPage}`
       );
       if (!response) return; // Token expired, user logged out
       const data = await response.json();

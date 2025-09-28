@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
     console.log(token);
     try {
       const response = await fetch(
-        `http://${import.meta.env.VITE_API_BASE_URL}/api/employees/current`,
+        `https://${import.meta.env.VITE_API_BASE_URL}/api/employees/current`,
         {
           method: "GET",
           headers: {

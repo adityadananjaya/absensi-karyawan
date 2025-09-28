@@ -9,9 +9,9 @@ const fetchEmployees = async ({
   try {
     let url;
     if (search.trim() === "") {
-      url = `http://${import.meta.env.VITE_API_BASE_URL}/api/employees?page=${page}&limit=${recordsPerPage}`;
+      url = `https://${import.meta.env.VITE_API_BASE_URL}/api/employees?page=${page}&limit=${recordsPerPage}`;
     } else {
-      url = `http://${import.meta.env.VITE_API_BASE_URL}/api/employees`;
+      url = `https://${import.meta.env.VITE_API_BASE_URL}/api/employees`;
     }
 
     const response = await authFetch(url, {

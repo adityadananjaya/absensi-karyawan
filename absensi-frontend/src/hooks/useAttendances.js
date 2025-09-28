@@ -29,7 +29,7 @@ const useAttendances = ({
 
 
       try {
-        const response = await authFetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/attendance?date=${date}`, {
+        const response = await authFetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/attendance?date=${date}`, {
           method: "GET",
         });
         if (response && response.ok) {

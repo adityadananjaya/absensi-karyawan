@@ -11,7 +11,7 @@ const useDashboardUser = (authFetch, user, id, navigate) => {
           navigate("/dashboard");
           return;
         }
-        const response = await authFetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`);
+        const response = await authFetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`);
         if (response?.ok) {
           const data = await response.json();
           setDashboardUser(data);

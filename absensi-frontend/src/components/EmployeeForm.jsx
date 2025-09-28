@@ -25,7 +25,7 @@ const EmployeeForm = () => {
       const fetchEmployee = async () => {
         try {
           const response = await authFetch(
-            `http://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`,
+            `https://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`,
             { method: "GET" }
           );
           if (response && response.ok) {
@@ -59,7 +59,7 @@ const EmployeeForm = () => {
     try {
       if (id) {
         const response = await authFetch(
-          `http://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`,
+          `https://${import.meta.env.VITE_API_BASE_URL}/api/employees/${id}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -73,7 +73,7 @@ const EmployeeForm = () => {
           navigate(`/dashboard/${id}`);
         }
       } else {
-        const response = await authFetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/employees`, {
+        const response = await authFetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/employees`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),

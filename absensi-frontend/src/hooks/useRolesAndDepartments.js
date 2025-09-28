@@ -13,7 +13,7 @@ const useRolesAndDepartments = (logout) => {
       }
 
       try {
-        const response = await fetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/employees/meta`, {
+        const response = await fetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/employees/meta`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });

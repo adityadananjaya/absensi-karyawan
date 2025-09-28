@@ -15,7 +15,7 @@ const Login = () => {
         localStorage.removeItem('login_token');
         console.log(import.meta.env.VITE_API_BASE_URL)
         try {
-            const response = await fetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/employees/login`, {
+            const response = await fetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/employees/login`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ email, password })
@@ -24,7 +24,7 @@ const Login = () => {
             if (response.ok) {
                 console.log('Login successful:', data);
                 localStorage.setItem('login_token', data.accessToken);
-                const userRes = await fetch(`http://${import.meta.env.VITE_API_BASE_URL}/api/employees/current`, {
+                const userRes = await fetch(`https://${import.meta.env.VITE_API_BASE_URL}/api/employees/current`, {
                     method: 'GET',
                     headers: { 'Authorization': `Bearer ${data.accessToken}` }
                 });

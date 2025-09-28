@@ -56,7 +56,7 @@ const Dashboard = () => {
     formData.append("photo", file);
     formData.append("employeeId", dashboardUser._id);
     const response = await authFetch(
-      `http://${import.meta.env.VITE_API_BASE_URL}/api/attendance/`,
+      `https://${import.meta.env.VITE_API_BASE_URL}/api/attendance/`,
       {
         method: "POST",
         body: formData,
@@ -80,7 +80,7 @@ const Dashboard = () => {
   const checkAttendance = async () => {
     if (!dashboardUser) return;
     const response = await authFetch(
-      `http://${import.meta.env.VITE_API_BASE_URL}/api/attendance/today/${
+      `https://${import.meta.env.VITE_API_BASE_URL}/api/attendance/today/${
         dashboardUser._id
       }`
     );
@@ -284,7 +284,7 @@ const AttendanceStatus = ({ attendance, dashboardUser, user }) => {
           </span>
         </h1>
         <img
-          src={`http://${import.meta.env.VITE_API_BASE_URL}${
+          src={`https://${import.meta.env.VITE_API_BASE_URL}${
             attendance.attendance.photoUrl
           }`}
           alt="Preview"
@@ -362,7 +362,7 @@ const AttendanceHistoryTable = ({ lastNDates, attendanceHistory }) => (
               <td className="px-4 py-2">
                 {record ? (
                   <a
-                    href={`http://${import.meta.env.VITE_API_BASE_URL}${
+                    href={`https://${import.meta.env.VITE_API_BASE_URL}${
                       record.photoUrl
                     }`}
                     target="_blank"

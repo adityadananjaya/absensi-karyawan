@@ -39,53 +39,17 @@ const Attendances = () => {
   const iconColors = getIconColors();
 
   // Fetch attendance data
-  const [employees, setEmployees] = useState([]);
-  const [attendances, setAttendances] = useState([]);
-
-  useEffect(() => {
-    const fetchAttendances = async () => {
-      if ((!user && !loading) || (user && user.role !== "Admin")) {
-        logout();
-        navigate("/");
-        console.log("Logged out");
-        return;
-      }
-
-      let url;
-
-      try {
-        const response = await authFetch(`http://${
-          import.meta.env.VITE_API_BASE_URL
-        }/api/attendance?date=${date}`, {
-          method: "GET",
-        });
-        if (response && response.ok) {
-          const data = await response.json();
-          console.log("Attendances fetched:", data);
-          setAttendances(data);
-          // Handle the fetched attendance data here
-        } else {
-          console.error("Failed to fetch attendances");
-        }
-      } catch (error) {
-        console.error("Error fetching attendances:", error);
-      }
-      // Fetch employees
-      const responseEmployees = await fetchEmployees({
-        page,
-        recordsPerPage,
-        search,
-        authFetch,
-      });
-      if (responseEmployees) {
-        setEmployees(responseEmployees);
-        console.log("Employees fetched:", responseEmployees);
-      } else {
-        console.error("Failed to fetch employees");
-      }
-    };
-    fetchAttendances();
-  }, [page, date, search]);
+  const { employees, attendances } = useAttendances({
+    authFetch,
+    user,
+    logout,
+    navigate,
+    date,
+    page,
+    recordsPerPage,
+    search,
+    loading,
+  });
 
   // Filter employees based on search
   const filteredEmployees = filterEmployees(employees, search);
@@ -209,9 +173,7 @@ const EmployeeRow = ({ employee, record, navigate, iconColors }) => {
       <td className="px-4 py-2 text-center">
         {record ? (
           <a
-            href={`http://${import.meta.env.VITE_API_BASE_URL}${
-              record.photoUrl
-            }`}
+            href={`https://${import.meta.env.VITE_API_BASE_URL}${record.photoUrl}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:text-blue-800 font-medium"
