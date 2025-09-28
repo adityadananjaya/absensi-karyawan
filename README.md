@@ -47,12 +47,12 @@ Before logging attendance:
 ### Adding new employee
 <img width="1910" height="939" alt="image" src="https://github.com/user-attachments/assets/0fa74e6b-bddd-45a5-bbc8-88b2df432e6b" />
 
-### Attendances page
+### Attendances page, see all employees attendances for a certain date
 <img width="1903" height="942" alt="image" src="https://github.com/user-attachments/assets/a8d7fbfe-a0b9-44f6-8ba5-adf1b69e2276" />
 
-### All employee dashboards are accessible by the admin
+### All employee dashboards are accessible by the admin. They can see the user's attendance, but not edit it. 
 <img width="1903" height="940" alt="image" src="https://github.com/user-attachments/assets/1d79cc80-d4d0-423e-83ac-518ae07349c7" />
-
+<img width="1892" height="939" alt="image" src="https://github.com/user-attachments/assets/a04dccea-b0e7-4687-80ac-4509ff567f40" />
 Admins can freely edit the profile of any employee
 <img width="1912" height="942" alt="image" src="https://github.com/user-attachments/assets/d4462ec7-ce84-487d-8f84-7bbc3fd6a4ae" />
 
