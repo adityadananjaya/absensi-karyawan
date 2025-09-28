@@ -3,8 +3,15 @@
 
  Live Demo: https://absensi-karyawan.onrender.com/
  
- Instructions: You may log in as the admin with the email admin@dexa.org and password123. Every sample employee profile with the email that ends with @dexa.org you see in the database is also accessible with that same password.
- ## Tech Stack
+## Demo Login
+- **Admin:**  
+  Email: `admin@dexa.org`  
+  Password: `password123`  
+
+- **Employees:**  
+  Any `@dexa.org` email from the database, same password `password123`.
+
+## Tech Stack
 -   **Frontend:** React + Vite, Tailwind
 -   **Backend:** Node.js, Express, Mongoose (MongoDB)
 -   **Auth:** JWT (http-only cookie or bearer token)
@@ -51,13 +58,28 @@ Admins can freely edit the profile of any employee
 
 Please access the demo for more!
 
+## Getting Started
+### Backend
+    cd absensi-frontend
+	npm install
+	npm run dev
+
+The backend runs on http://localhost:5001. Make sure to modify your .env file.
+
+### Front-end
+	cd absensi-frontend
+	npm install
+	npm run dev
+	
+The frontend runs on http://localhost:3000.
+
 ## Design Decisions / Comments
 - Images: Stored locally in uploads folder, but are stored as links in the database. In a real-world app, we would use a storage service like S3
 - Roles/Departments: For this project, I have hardcoded the roles & departments into the API. In a real-world app, this would be stored in a separate database.
 - Passwords: Hashed (bcrypt) in database.
-- Testing: No unit testing yet. I have only done manual testing, using Thunder Client for for the backend. Given more time, I would have made better use of automatic testing.
+- Testing: For this project, I focused on functionality and manual testing (Thunder Client). With more time, I’d add automated tests for core API routes and components.
 
-## Ideas for expansion (on my to-do if I had more time)
+## Road map / future work
 - Enforcing constraints while calling backend routes -- e.g no duplicate emails when creating, phone number format
 - Check-in/check-out time instead of one-click logging. Track how many hours of work done.
 - Check for weekdays/holidays (tanggal merah). Allow user or admin to log leaves instead of attendance (e.g sick leave, maternity leave, etc.)
