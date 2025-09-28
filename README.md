@@ -60,7 +60,7 @@ Please access the demo for more!
 
 ## Getting Started
 ### Backend
-    cd absensi-frontend
+    cd absensi-backend
 	npm install
 	npm run dev
 
