@@ -43,7 +43,7 @@ const Navbar = () => {
   }, [user]);
 
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 z-50">
       <nav className="bg-slate-900/95 p-4 shadow-lg backdrop-blur text-white flex justify-between items-center">
         {/* Logo and Title */}
         <Link to="/dashboard" className="flex items-center gap-2 text-white">
